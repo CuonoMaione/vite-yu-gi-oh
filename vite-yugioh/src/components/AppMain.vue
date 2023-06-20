@@ -18,23 +18,30 @@ export default {
     data(){
         return{
             characterList: [],
-            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0'
+            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?',
+        
         }
     },
 
     methods: {
         showMyValue(archetypeSelected){
-            alert(archetypeSelected)
-        }
+            axios.get(this.apiUrl,{
+            params:{
+            archetype : archetypeSelected
+            }
+         })
+        .then( (response) => {
+        console.log(response.data.data[0].card_images[0].image_url)
+         this.characterList = response.data.data 
+         console.log(this.nameArchetype)
+
+})
+        },
     },
 
     created(){
 
-    axios.get(this.apiUrl)
-    .then( (response) => {
-    console.log(response.data.data[0].card_images[0].image_url)
-    this.characterList = response.data.data 
-})
+    
 },
 }
 </script>
