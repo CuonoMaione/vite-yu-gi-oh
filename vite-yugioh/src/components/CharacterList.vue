@@ -27,7 +27,7 @@ export default {
     },    
     created(){
 
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0')
     .then( (response) => {
         console.log(response.data.data[0].card_images[0].image_url)
         this.CharacterList = response.data.data 

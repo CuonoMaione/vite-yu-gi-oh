@@ -4,8 +4,8 @@
         <img :src="image" class="card-img-top" alt="...">
 
         <div class="card-body">
-            <h5 class="card-title">{{ name }}</h5>
-            <p class="card-text">{{ species }}</p>
+            <h5 class="card-title text-white fw-bold text-center">{{ name }}</h5>
+            <p class="card-text text-center">{{ species }}</p>
         </div>
 </div>
 </template>
@@ -29,5 +29,9 @@ export default {
     }
     div.card-body{
         background-color: #d48f38;
+    }
+
+    h5.card-title{
+        
     }
 </style>
