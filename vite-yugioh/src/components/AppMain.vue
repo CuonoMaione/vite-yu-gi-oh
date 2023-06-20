@@ -1,6 +1,6 @@
 <template>
     <main class="p-5">
-    
+        <SearchBar />
         <CharacterList :characterList="characterList"/>
         
     </main>
@@ -8,12 +8,12 @@
 <script>
 import CharacterList from './CharacterList.vue';
 import axios from 'axios';
-
+import SearchBar from './SearchBar.vue';
 export default {
     name: 'AppMain',
     components:{
         CharacterList,
-        
+        SearchBar,
     },
 
     data(){
