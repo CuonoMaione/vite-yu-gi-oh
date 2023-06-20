@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <h1>App Main</h1>
+    <main class="p-5">
+    
         <CharacterList/>
         
-    </div>
+    </main>
 </template>
 <script>
 import CharacterList from './CharacterList.vue';
@@ -17,5 +17,8 @@ export default {
     }
 }
 </script>
-<style>    
+<style scoped>   
+main{
+    background-color: #d48f38;
+} 
 </style>

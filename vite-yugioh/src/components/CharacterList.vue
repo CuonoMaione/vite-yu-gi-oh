@@ -1,6 +1,6 @@
 <template>
-    <div class="container-lg">
-    <div class="row">
+    <div class="container-lg bg-white py-5">
+    <div class="row justify-content-center">
     <CharacterCard v-for="character in CharacterList" 
     :name="character.name"
     :species="character.archetype"
