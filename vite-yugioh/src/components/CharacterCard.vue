@@ -30,8 +30,4 @@ export default {
     div.card-body{
         background-color: #d48f38;
     }
-
-    h5.card-title{
-        
-    }
 </style>

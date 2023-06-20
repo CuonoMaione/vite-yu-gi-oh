@@ -1,6 +1,7 @@
 <template>
     <div class="container-lg bg-white py-5">
     <div class="row justify-content-center">
+    <div class="col-11 ms-3 bg-dark text-white p-3">Found {{ CharacterList.length }} cards</div>
     <CharacterCard v-for="character in CharacterList" 
     :name="character.name"
     :species="character.archetype"
