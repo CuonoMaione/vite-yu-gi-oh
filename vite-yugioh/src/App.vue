@@ -3,10 +3,6 @@
   <AppHeader/>
   <AppMain/>
 
-  <h1 v >
-    ciao
-  </h1>
-
 </template>
 <script>
 
