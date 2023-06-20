@@ -6,6 +6,7 @@
                     <select class="form-select" id="inputGroupSelect01" v-model="archetypeSelected">
                     <option v-for="index in archetypeList">{{ index }}</option>
                     </select>
+                    <label class="input-group-text" for="inputGroupSelect01" @click="$emit('searched',archetypeSelected)" >Search!</label>
                 </div>
             </div>
         </div>

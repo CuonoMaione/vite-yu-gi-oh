@@ -1,6 +1,6 @@
 <template>
     <main class="p-5">
-        <SearchBar />
+        <SearchBar @searched="showMyValue" />
         <CharacterList :characterList="characterList"/>
         
     </main>
@@ -15,20 +15,25 @@ export default {
         CharacterList,
         SearchBar,
     },
-
     data(){
         return{
             characterList: [],
+            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0'
+        }
+    },
+
+    methods: {
+        showMyValue(archetypeSelected){
+            alert(archetypeSelected)
         }
     },
 
     created(){
 
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0')
+    axios.get(this.apiUrl)
     .then( (response) => {
     console.log(response.data.data[0].card_images[0].image_url)
     this.characterList = response.data.data 
-    
 })
 },
 }
