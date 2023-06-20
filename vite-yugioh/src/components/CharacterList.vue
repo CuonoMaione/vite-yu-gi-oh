@@ -1,8 +1,8 @@
 <template>
     <div class="container-lg bg-white py-5">
     <div class="row justify-content-center">
-    <div class="col-11 ms-3 bg-dark text-white p-3">Found {{ CharacterList.length }} cards</div>
-    <CharacterCard v-for="character in CharacterList" 
+    <div class="col-11 ms-3 bg-dark text-white p-3">Found {{ characterList.length }} cards</div>
+    <CharacterCard v-for="character in characterList" 
     :name="character.name"
     :species="character.archetype"
     :image="character.card_images[0].image_url"/>
@@ -12,29 +12,21 @@
 
 <script>
 import CharacterCard from './CharacterCard.vue';
-import axios from 'axios';
+
 
 export default {
     name: "CharacterList",
-    component: {
-        CharacterCard,
-    },
     components: { CharacterCard, },
+    props:{
+        characterList : Array,
+    },
 
     data() {
         return{
-            CharacterList : [],
+            
         }
     },    
-    created(){
-
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=40&offset=0')
-    .then( (response) => {
-        console.log(response.data.data[0].card_images[0].image_url)
-        this.CharacterList = response.data.data 
-        
-    })
-    },
+    
 
 };
 
