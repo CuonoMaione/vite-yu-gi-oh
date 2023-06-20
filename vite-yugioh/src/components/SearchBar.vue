@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-5">
                 <div class="input-group mb-3">
-                    <select class="form-select" id="inputGroupSelect01" v-model="archetypeSelected">
+                    <select class="form-select" id="inputGroupSelect01" placeholder="Select archetype" v-model="archetypeSelected">
                     <option v-for="index in archetypeList">{{ index }}</option>
                     </select>
                     <label class="input-group-text" for="inputGroupSelect01" @click="$emit('searched',archetypeSelected)" >Search!</label>
@@ -17,8 +17,8 @@ export default {
     name : 'SearchBar',
     data() {
         return {
-            archetypeList : ['All','Alien','Noble Kinght','A.I.','Ignister'],
-            archetypeSelected : "All",
+            archetypeList : ['Select archetype','Alien','"C"','A.I.','Ignister','Dark Magician',"Aether",'Dragonmaid'],
+            archetypeSelected : "Select archetype",
         }
     },
     created() {
