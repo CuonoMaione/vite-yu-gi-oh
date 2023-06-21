@@ -3,10 +3,9 @@
         <div class="row">
             <div class="col-5">
                 <div class="input-group mb-3">
-                    <select class="form-select" id="inputGroupSelect01" placeholder="Select archetype" v-model="archetypeSelected">
+                    <select class="form-select" id="inputGroupSelect01" placeholder="Select archetype" v-model="archetypeSelected" @click="$emit('searched',archetypeSelected)">
                     <option v-for="index in archetypeList">{{ index }}</option>
                     </select>
-                    <label class="input-group-text" for="inputGroupSelect01" @click="$emit('searched',archetypeSelected)" >Search!</label>
                 </div>
             </div>
         </div>
